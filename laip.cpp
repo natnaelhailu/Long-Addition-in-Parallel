@@ -1,5 +1,5 @@
 /*
-*Name: Natnael Hailu, 5006098508, hw4
+*Name: natizgr8
 *Description: This program implements the concept of parallell
 *             programming by using the std::thread c++ library
 *			  to add two large numbers.
