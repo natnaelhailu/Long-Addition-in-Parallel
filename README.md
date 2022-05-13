@@ -1,5 +1,9 @@
 # Long Addition in Parallel
 
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/98181344/168389092-b12db02d-7526-4665-8f5c-f5e137f844fe.png" width = "175">
+</p>
+
 ## Description
 
 Addition. Such a simple task, you might have learned the algorithm for long addition when you were in grade
@@ -9,20 +13,16 @@ store the number into a dynamic array or a vector. Thus each element will be a d
 place value, so you can write the iterative code to implement long addition. To make matters worse, we will
 do this in parallel using a vector of threads.
 
-Suppose we want to add the two 32 digit numbers: 56781257987110923417082367650001 and
-74321168999909850024784138764000. Of course this can be done sequentially in O(n) time where n is the
+Suppose we want to add the two 32 digit numbers: `56781257987110923417082367650001` and
+`74321168999909850024784138764000`. Of course this can be done sequentially in O(n) time where n is the
 size of the two numbers. Suppose we had 8 threads that could run in parallel, we can break the problem
 where each thread adds a section of size 4 and add them up in parallel since the each thread can perform
 its own addition without the result of any other thread.
 
-```
-5678 1257 9871 1092 3417 0823 6765 0001
-+
-7432 1168 9999 0985 0024 7841 3876 4000
-```
-```
-1 3110 0 2425 1 9870 0 2077 0 3441 0 8664 1 0641 0 4001
-```
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/98181344/168388835-daa18421-fb14-4380-aa94-63e4e2a44abb.png">
+</p>
+ 
 As you can see above, each portion was added (using long addition) and the number in red is the carry over
 that would be added to the section to the left of where the carry over bit was computed, and so on. Once
 all the carry overs are added to each section, the numbers can be concatenated to obtain the final answer.
@@ -45,16 +45,12 @@ you will perform add the carry overs to the correct section of the number, this 
 
 ```
 $ g++ -pthread laip.cpp
-```
-```
+
 $ cat huge_nums.txt
 3377364598435445778809903612001058603382305856774546614102313493
 8080212596483814704504943572350673964488834590322416825886403781
-```
-```
+
 $ ./a.out
 Enter input file: huge_nums.txt
-```
-```
 11457577194919260483314847184351732567871140447096963439988717274
 ```
