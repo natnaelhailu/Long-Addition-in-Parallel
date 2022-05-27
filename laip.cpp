@@ -130,7 +130,7 @@ int main()
 * add: given a range of integer values of two vectors,
 *      this function sums up the corresponding integers.
 * parameters: n1: vector holding first range of numbers
-*			  n2: vector holding second range of numbers
+*             n2: vector holding second range of numbers
 *              S: a vector to hold the sum of each digit
 *              C: a vector to hold the last carry-over
 *           left: index of last number to add
