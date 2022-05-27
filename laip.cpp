@@ -2,7 +2,7 @@
 *Name: natizgr8
 *Description: This program implements the concept of parallell
 *             programming by using the std::thread c++ library
-*			  to add two large numbers.
+*             to add two large numbers.
 *Input : a filename of a file containing two large numbers.
 *Output: the sum of the two numbers.
 */
